@@ -95,6 +95,7 @@ const cvFormatter = (arr) => {
     if(arr[i][2]>1){
         for(let i=0;i<arr.lenght;i++)
         {
+            //...
             fullName = arr[i][0]+arr[i][1];
             cvs2.push();
         }
