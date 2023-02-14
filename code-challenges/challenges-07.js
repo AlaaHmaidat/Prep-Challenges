@@ -23,8 +23,8 @@
 const objLat = (obj) => {
     // write your code here
     let firstNameS = obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1);
-    let  lastNameS  = obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
-    return ("my name is " + firstNameS +" "+ lastNameS +" I am "+ obj.age + " YO, and I love " + obj.hobby +".");
+    let lastNameS = obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
+    return ("my name is " + firstNameS + " " + lastNameS + " I am " + obj.age + " YO, and I love " + obj.hobby + ".");
     // return (`my name is ${firstNameS} ${lastNameS} I am ${obj.age} YO, and I love ${obj.hobby}.`);
 };
 // -------------------------------------------------------------------------------------------------------
@@ -90,48 +90,30 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
     // write your code here
-     arr.map(function(arr) {
-        let newArrayOfObj = {};
-        if(arr.yearsOfExperience > 1){
-            // for (let i =0 ;i<arr.lenght;i++){
-                if(arr.lastName==null)
-                {
-                    newArrayOfObj["fullName"] = `${arr.firstName}`;
-                }
-                else{
-                    newArrayOfObj["fullName"] = `${arr.firstName} ${arr.lastName}`;
-                }
-              
-                newArrayOfObj["tech"] = arr.tech;
-                
-            //   let res=  newArrayOfObj.filter(element => {
-            //         if (Object.keys(element).length !== 0) {
-            //           return true;
-            //         }
-                  
-            //         return false;
-            //       });
-          
-            newArrayOfObj.filter(
-                obj => !(obj && Object.keys(obj).length === 0)
-              );
-              
-              return newArrayOfObj;     
+    let newArrayOfObj = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].yearsOfExperience > 1 && arr[i].lastName == null) {
+            // newArrayOfObj["fullName"]=arr[i].firstName;
+            // newArrayOfObj["tech"]=arr[i].tech;
+            newArrayOfObj.push({ fullName: arr[i].firstName, tech: arr[i].tech });
+
         }
-      
-      
-        
-      });
-    //   function filterById(obj) {
-    //     if (Number.isFinite(obj.id) && obj.id !== 0) 
-    //     {
-    //       return true
-    //     } 
-    //     countInvalidEntries++
-    //     return false;
-    //   }
-    //   let arrayById = newArrayOfObj.filter(filterById);
-     
+        else if (arr[i].yearsOfExperience > 1 && arr[i].firstName == null) {
+
+            newArrayOfObj.push({ fullName: arr[i].lastName, tech: arr[i].tech });
+
+
+        }
+        else if (arr[i].yearsOfExperience > 1) {
+
+            newArrayOfObj.push({ fullName: arr[i].firstName + " " + arr[i].lastName, tech: arr[i].tech });
+
+
+        }
+
+    }
+    return newArrayOfObj;
+
 };
 // -------------------------------------------------------------------------------------------------------
 
