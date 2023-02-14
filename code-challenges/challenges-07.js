@@ -90,18 +90,48 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
     // write your code here
-    let fullName;
-    let cvs2;
-    if(arr[i][2]>1){
-        for(let i=0;i<arr.lenght;i++)
-        {
-            //...
-            fullName = arr[i][0]+arr[i][1];
-            cvs2.push();
+     arr.map(function(arr) {
+        let newArrayOfObj = {};
+        if(arr.yearsOfExperience > 1){
+            // for (let i =0 ;i<arr.lenght;i++){
+                if(arr.lastName==null)
+                {
+                    newArrayOfObj["fullName"] = `${arr.firstName}`;
+                }
+                else{
+                    newArrayOfObj["fullName"] = `${arr.firstName} ${arr.lastName}`;
+                }
+              
+                newArrayOfObj["tech"] = arr.tech;
+                
+            //   let res=  newArrayOfObj.filter(element => {
+            //         if (Object.keys(element).length !== 0) {
+            //           return true;
+            //         }
+                  
+            //         return false;
+            //       });
+          
+            newArrayOfObj.filter(
+                obj => !(obj && Object.keys(obj).length === 0)
+              );
+              
+              return newArrayOfObj;     
         }
-    }
-
-
+      
+      
+        
+      });
+    //   function filterById(obj) {
+    //     if (Number.isFinite(obj.id) && obj.id !== 0) 
+    //     {
+    //       return true
+    //     } 
+    //     countInvalidEntries++
+    //     return false;
+    //   }
+    //   let arrayById = newArrayOfObj.filter(filterById);
+     
 };
 // -------------------------------------------------------------------------------------------------------
 
