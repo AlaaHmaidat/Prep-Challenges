@@ -82,8 +82,6 @@ const replaceWords = (str) => {
             words.splice(indexWas, 1, 'were');
         }
     }
-
-
     return words.join(' ');
 }
 
