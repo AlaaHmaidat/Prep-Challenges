@@ -12,22 +12,16 @@
 // Input: 50, 9
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
-let arr = [];
-let arr2 = [];
-const recursionPattern = (int1, int2) => {
+const recursionPattern = (int1, int2,arr=[]) => {
     // write your code here
-
-    console.log("int1 = " + int1 + " " + "int2 = " + int2);
+    
     if (int2 == 0) {
-        arr.push(int1);
-    } else if (int2 > 0) {
+        return arr.push(int1);
+    } else {
         arr.push(int1);
         if (int1 > 0) {
-            recursionPattern(int1 - int2, int2);
-            console.log(arr);
-        }
-        else if (int1 < arr[0]) {
-            arr.push(int1 + int2);
+            recursionPattern(int1 - int2, int2,arr);
+            arr.push(int1);
         }
     }
     return arr;
@@ -50,12 +44,9 @@ const recursionPattern = (int1, int2) => {
 
 const filterLinks = (str) => {
     // write your code here
-    // Create a new div element
-    var temporalDivElement = document.createElement("div");
-    // Set the HTML content with the providen
-    temporalDivElement.innerHTML = str;
-    // Retrieve the text property of the element (cross-browser support)
-    return temporalDivElement.textContent || temporalDivElement.innerText || "";
+    console.log(str);
+
+    
 }
 // -------------------------------------------------------------------------------------------------------
 
