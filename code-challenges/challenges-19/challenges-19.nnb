@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function appendAndDelete(s, t, k) {\n    // Write your code here\n    const str1 = s.split('');\n    const str2 = t.split('');\n    \n     let indx;\n    let str1L0 = str1.length ;\n    let str2L0 = str2.length ;\n    let sumStrL=str1L0+str2L0+1;\n\n    let str1L = str1.length - 1;\n    let str2L = str2.length - 1;\n    if (str1L0 == str2L0 && k==sumStrL){\n        return 'Yes';\n\n    }else if(str1!=str2){\n           for (let i = 0; i < (str1L + str2L); i++) {\n        if (str1[i] == str2[i]) {\n            continue;\n        }\n        indx = i - 1;\n        break;\n    }\n    let newStr1L = str1L - indx;\n    let newStr2L = str2L - indx;\n\n    let z = newStr1L + newStr2L;\n\n    if (z == k) {\n        return 'Yes';\n    }\n    return 'No';\n    }\n \n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
